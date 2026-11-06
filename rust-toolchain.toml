@@ -1,0 +1,3 @@
+# El toolchain GNU trae su propio linker: no requiere instalar Visual Studio.
+[toolchain]
+channel = "stable-x86_64-pc-windows-gnu"

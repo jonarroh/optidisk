@@ -1,0 +1,22 @@
+[package]
+name = "optidisk"
+version = "0.1.0"
+edition = "2024"
+description = "Encuentra lo que más pesa en tu disco y bórralo desde un TUI"
+
+[dependencies]
+ratatui = "0.30.2"
+rayon = "1.12.0"
+trash = "5.3.0"
+unicode-width = "0.2.3"
+
+[target."cfg(windows)".dependencies]
+windows-sys = { version = "0.61.2", features = ["Win32_Storage_FileSystem", "Win32_Foundation"] }
+
+[dev-dependencies]
+tempfile = "3"
+
+[profile.release]
+lto = "thin"
+codegen-units = 1
+strip = true
